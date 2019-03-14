@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="cours:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cours_jar</output-path>
+    <root id="archive" name="cours.jar">
+      <element id="module-output" name="cours" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/junit-4.13-beta-2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/hamcrest-core-2.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
