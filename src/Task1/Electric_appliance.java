@@ -3,7 +3,17 @@ package Task1;
 public abstract class Electric_appliance {
     private String model;
     private double capacity;
-        public double getCapacity()
+    private Boolean isOn=false;
+
+    public Boolean getOn() {
+        return isOn;
+    }
+
+    public void setOn(Boolean on) {
+        isOn = on;
+    }
+
+    public double getCapacity()
         {
             return capacity;
         }

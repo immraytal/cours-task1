@@ -76,10 +76,12 @@ public class Menu {
                     }
                     break;
                 case 4://Sort by capacity
-
                     break;
                 case 5://Search by diapozon
                     break;
+                case 6://on/off appliance
+                    break;
+
                     default:
             }
 
@@ -88,7 +90,7 @@ public class Menu {
     private static ArrayList<Electric_appliance> randomSet()
     {
         Random random = new Random();
-        ArrayList<Electric_appliance> someList = new ArrayList<Electric_appliance>();
+        ArrayList<Electric_appliance> someList = new ArrayList<>();
         int size=0;
         while(size<1) {
             size = random.nextInt(5);

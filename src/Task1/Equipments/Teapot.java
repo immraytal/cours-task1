@@ -4,7 +4,6 @@ import Task1.Electric_appliance;
 
 public class Teapot extends Electric_appliance {
     private float volume;
-    private boolean isElectric;
     private String material;
 
     public void setVolume(float volume)
@@ -14,14 +13,6 @@ public class Teapot extends Electric_appliance {
     public float getVolume()
     {
         return volume;
-    }
-    public void setIsElectric(boolean isElectric)
-    {
-        this.isElectric=isElectric;
-    }
-    public boolean getIsElectric()
-    {
-        return isElectric;
     }
     public void setMaterial(String material)
     {
@@ -36,14 +27,12 @@ public class Teapot extends Electric_appliance {
     {
         super("Unknown teapot", 0.0);
         this.volume = 0.0f;
-        this.isElectric = false;
         this.material = "Unknown";
     }
 
-    public Teapot(String model, double capacity, float volume, boolean isElectric, String material) {
+    public Teapot(String model, double capacity, float volume, String material) {
         super(model, capacity);
         this.volume = volume;
-        this.isElectric = isElectric;
         this.material = material;
     }
 
