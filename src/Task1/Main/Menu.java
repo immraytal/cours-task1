@@ -25,7 +25,14 @@ public class Menu {
 
         while(true)
         {
-            System.out.println("Enter number");
+            System.out.printf("Menu:\n" +
+                    "1. Add new appliance\n" +
+                    "2. Remove appliance\n" +
+                    "3. Show all appliance\n" +
+                    "4. Sort by capacity\n" +
+                    "5. Search by diapozon\n" +
+                    "6. On/Off some appliance\n" +
+                    "0. Exit\n");
             check = Integer.parseInt(in.next());
 
             switch (check)
@@ -58,19 +65,24 @@ public class Menu {
                 case 2://Remove appliance
                     System.out.println("New check - enter appliance");
                     String newCheck1 = in.nextLine();
+                    System.out.println("Which one remove");
+                    int whichOne = Integer.parseInt(in.nextLine());
                     switch (newCheck1)
                     {
                         case "TV":
-                            int whichOne = Integer.parseInt(in.nextLine());
                             tvs.remove(whichOne);
                             break;
                         case "PC":
+                            psc.remove(whichOne);
                             break;
                         case "Teapot":
+                            teapots.remove(whichOne);
                             break;
                         case "Fridge":
+                            fridges.remove(whichOne);
                             break;
                         default:
+                            System.out.println("Enter one of {TV, PC, Teapot, Fridge}");
                     }
                     break;
                 case 3://Show appliance
@@ -138,6 +150,7 @@ public class Menu {
                 case 0://exit
                     return 0;
                     default:
+                        System.out.println("Enter number [0..6]");
             }
 
         }
@@ -151,7 +164,6 @@ public class Menu {
         int size=0;
         while(size<1) {
             size = random.nextInt(5);
-            System.out.println(size);
         }
 
         for(int i=0;i<size;i++)
