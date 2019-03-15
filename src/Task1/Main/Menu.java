@@ -17,9 +17,9 @@ public class Menu {
 
     public int menu()
     {
-        int check=0;
-        double board1=0.0;
-        double board2=10000.0;
+        int check;
+        double board1;
+        double board2;
         String checkString;
         Scanner in = new Scanner(System.in);
 
@@ -152,6 +152,10 @@ public class Menu {
                     default:
                         System.out.println("Enter number [0..6]");
             }
+            System.out.println("Press any key to continue..");
+            in.nextLine();
+            in.nextLine();
+            System.out.flush();
 
         }
 
