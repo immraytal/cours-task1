@@ -78,8 +78,10 @@ public class Fridge extends Electric_appliance {
 
     @Override
     public String toString() {
-        return "Fridge{" +
-                "refrigeratorVolume=" + refrigeratorVolume +
+        return "Fridge {" +
+                "model= " + getModel() +
+                ", capacity= " + (getCapacity()*1000)/1000 +
+                " W, refrigeratorVolume=" + refrigeratorVolume +
                 ", freezerVolume=" + freezerVolume +
                 ", height=" + height +
                 ", width=" + width +

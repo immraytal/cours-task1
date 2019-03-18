@@ -40,11 +40,13 @@ public class Menu {
                 case 1: //Add new appliance
                     //Which app
                     System.out.println("New check - enter appliance");
+                    in.nextLine();
                     checkString = in.nextLine();
                     switch (checkString)
                     {
                         case "TV":
                             System.out.println("Enter parameters");
+                            in.nextLine();
                             String model = in.nextLine();
                             double capacity = Double.parseDouble(in.nextLine());
                             int fps =  Integer.parseInt(in.nextLine());
@@ -58,6 +60,11 @@ public class Menu {
                         case "Teapot":
                             break;
                         case "Fridge":
+                            System.out.println("Enter parameters");
+                            in.nextLine();
+                            String modelf = in.nextLine();
+                            double capacityf = Double.parseDouble(in.nextLine());
+
                             break;
                             default:
                     }
@@ -89,7 +96,8 @@ public class Menu {
                     System.out.println("Fridges:");
                     for(Electric_appliance  a: fridges)
                     {
-                        System.out.println("model: "+a.getModel() + "  capacity: " + a.getCapacity() + " W isOn=" + a.getOn());
+                        System.out.println(a.toString());
+                      //  System.out.println("model: "+a.getModel() + "  capacity: " + a.getCapacity() + " W isOn=" + a.getOn());
                     }
                     System.out.println("PCs:");
                     for(Electric_appliance  a: psc)
