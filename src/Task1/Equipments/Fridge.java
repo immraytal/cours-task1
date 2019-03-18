@@ -2,6 +2,8 @@ package Task1.Equipments;
 
 import Task1.Electric_appliance;
 
+import java.text.DecimalFormat;
+
 public class Fridge extends Electric_appliance {
     private float refrigeratorVolume;
     private float freezerVolume;
@@ -78,14 +80,16 @@ public class Fridge extends Electric_appliance {
 
     @Override
     public String toString() {
+        DecimalFormat df = new DecimalFormat("#.##");
         return "Fridge {" +
                 "model= " + getModel() +
-                ", capacity= " + (getCapacity()*1000)/1000 +
+                ", capacity= " + df.format(getCapacity()) +
                 " W, refrigeratorVolume=" + refrigeratorVolume +
                 ", freezerVolume=" + freezerVolume +
                 ", height=" + height +
                 ", width=" + width +
                 ", length=" + length +
+                ", isOn=" + getOn() +
                 '}';
     }
 }

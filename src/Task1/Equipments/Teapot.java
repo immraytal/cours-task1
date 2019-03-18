@@ -2,6 +2,8 @@ package Task1.Equipments;
 
 import Task1.Electric_appliance;
 
+import java.text.DecimalFormat;
+
 public class Teapot extends Electric_appliance {
     private float volume;
     private String material;
@@ -39,5 +41,14 @@ public class Teapot extends Electric_appliance {
     public Teapot(String model, double capacity)
     {
         super(model, capacity);
+    }
+
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        return "Teapot{" +
+                "volume=" + volume +
+                ", material='" + material + '\'' +
+                '}';
     }
 }

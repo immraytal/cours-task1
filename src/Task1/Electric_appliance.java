@@ -1,5 +1,7 @@
 package Task1;
 
+import java.text.DecimalFormat;
+
 public abstract class Electric_appliance {
     private String model;
     private double capacity;

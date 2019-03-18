@@ -2,6 +2,8 @@ package Task1.Equipments;
 
 import Task1.Electric_appliance;
 
+import java.text.DecimalFormat;
+
 public class TV extends Electric_appliance {
     private int numberChannels;
     private int resolutionX;
@@ -71,5 +73,15 @@ public class TV extends Electric_appliance {
         this.numberChannels=0;
         this.resolutionX = 0;
         this.resolutionY=0;
+    }
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        return "TV{" +
+                "numberChannels=" + numberChannels +
+                ", resolutionX=" + resolutionX +
+                ", resolutionY=" + resolutionY +
+                ", fps=" + fps +
+                '}';
     }
 }

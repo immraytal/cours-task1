@@ -2,6 +2,8 @@ package Task1.Equipments;
 
 import Task1.Electric_appliance;
 
+import java.text.DecimalFormat;
+
 public class PC extends Electric_appliance {
     private String nameOfCpu;
     private float frequencyOfCpu;
@@ -72,4 +74,15 @@ public class PC extends Electric_appliance {
         super(model,capacity);
     }
 
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        return "PC{" +
+                "nameOfCpu='" + nameOfCpu + '\'' +
+                ", frequencyOfCpu=" + frequencyOfCpu +
+                ", nameOfGpu='" + nameOfGpu + '\'' +
+                ", frequencyOfGpu=" + frequencyOfGpu +
+                ", volumeHdd=" + volumeHdd +
+                '}';
+    }
 }

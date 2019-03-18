@@ -97,7 +97,7 @@ public class Menu {
                     for(Electric_appliance  a: fridges)
                     {
                         System.out.println(a.toString());
-                      //  System.out.println("model: "+a.getModel() + "  capacity: " + a.getCapacity() + " W isOn=" + a.getOn());
+
                     }
                     System.out.println("PCs:");
                     for(Electric_appliance  a: psc)
