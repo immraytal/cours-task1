@@ -75,4 +75,15 @@ public class Fridge extends Electric_appliance {
         this.width = 0.0f;
         this.length = 0.0f;
     }
+
+    @Override
+    public String toString() {
+        return "Fridge{" +
+                "refrigeratorVolume=" + refrigeratorVolume +
+                ", freezerVolume=" + freezerVolume +
+                ", height=" + height +
+                ", width=" + width +
+                ", length=" + length +
+                '}';
+    }
 }
