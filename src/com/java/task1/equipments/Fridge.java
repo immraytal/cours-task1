@@ -1,6 +1,6 @@
-package Task1.Equipments;
+package com.java.task1.equipments;
 
-import Task1.Electric_appliance;
+import com.java.task1.Electric_appliance;
 
 import java.text.DecimalFormat;
 

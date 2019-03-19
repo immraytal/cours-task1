@@ -1,10 +1,10 @@
-package Task1.Equipments;
+package com.java.task1.equipments;
 
-import Task1.Electric_appliance;
+import com.java.task1.Electric_appliance;
 
 import java.text.DecimalFormat;
 
-public class PC extends Electric_appliance {
+public class Pc extends Electric_appliance {
     private String nameOfCpu;
     private float frequencyOfCpu;
     private String nameOfGpu;
@@ -51,7 +51,7 @@ public class PC extends Electric_appliance {
         return volumeHdd;
     }
 
-    public PC(String model, double capacity, String nameOfCpu, float frequencyOfCpu, String nameOfGpu, float frequencyOfGpu, float volumeHdd) {
+    public Pc(String model, double capacity, String nameOfCpu, float frequencyOfCpu, String nameOfGpu, float frequencyOfGpu, float volumeHdd) {
         super(model, capacity);
         this.nameOfCpu = nameOfCpu;
         this.frequencyOfCpu = frequencyOfCpu;
@@ -60,25 +60,33 @@ public class PC extends Electric_appliance {
         this.volumeHdd = volumeHdd;
     }
 
-    public PC()
+    public Pc()
     {
-        super("Unknown PC", 0.0);
+        super("Unknown Pc", 0.0);
         this.nameOfCpu = "Unknown";
         this.nameOfGpu = "Unknown";
         this.frequencyOfCpu = 0.0f;
         this.frequencyOfGpu = 0.0f;
         this.volumeHdd = 0.0f;
     }
-    public PC(String model, double capacity)
+
+    public Pc(String model, double capacity)
     {
         super(model,capacity);
+        this.nameOfCpu = "Unknown";
+        this.nameOfGpu = "Unknown";
+        this.frequencyOfCpu = 0.0f;
+        this.frequencyOfGpu = 0.0f;
+        this.volumeHdd = 0.0f;
     }
 
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("#.##");
-        return "PC{" +
-                "nameOfCpu='" + nameOfCpu + '\'' +
+        return "Pc{" +
+                "model=" + getModel() +
+                ", capacity= " + df.format(getCapacity()) +
+                " W, nameOfCpu='" + nameOfCpu + '\'' +
                 ", frequencyOfCpu=" + frequencyOfCpu +
                 ", nameOfGpu='" + nameOfGpu + '\'' +
                 ", frequencyOfGpu=" + frequencyOfGpu +

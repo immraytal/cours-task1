@@ -1,6 +1,4 @@
-package Task1;
-
-import java.text.DecimalFormat;
+package com.java.task1;
 
 public abstract class Electric_appliance {
     private String model;

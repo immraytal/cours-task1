@@ -1,6 +1,5 @@
-package TestTask1.TestEquipments;
+package com.java.task1.equipments;
 
-import Task1.Equipments.Fridge;
 import org.junit.Assert;
 import org.junit.Test;
 

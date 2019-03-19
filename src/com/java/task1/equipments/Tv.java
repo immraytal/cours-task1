@@ -1,10 +1,10 @@
-package Task1.Equipments;
+package com.java.task1.equipments;
 
-import Task1.Electric_appliance;
+import com.java.task1.Electric_appliance;
 
 import java.text.DecimalFormat;
 
-public class TV extends Electric_appliance {
+public class Tv extends Electric_appliance {
     private int numberChannels;
     private int resolutionX;
     private int resolutionY;
@@ -43,7 +43,7 @@ public class TV extends Electric_appliance {
         this.resolutionY = resolutionY;
     }
 
-    public TV(String model, double capacity, int numberChannels, int resolutionX, int resolutionY, int fps) {
+    public Tv(String model, double capacity, int numberChannels, int resolutionX, int resolutionY, int fps) {
         super(model, capacity);
         this.numberChannels = numberChannels;
         this.resolutionX = resolutionX;
@@ -51,7 +51,7 @@ public class TV extends Electric_appliance {
         this.fps = fps;
     }
 
-    public TV(String model, double capacity) {
+    public Tv(String model, double capacity) {
         super(model, capacity);
         this.fps=0;
         this.numberChannels=0;
@@ -59,14 +59,15 @@ public class TV extends Electric_appliance {
         this.resolutionY=0;
     }
 
-    public TV() {
-        super("Unknown TV" , 0.0);
+    public Tv() {
+        super("Unknown Tv", 0.0);
         this.fps=0;
         this.numberChannels=0;
         this.resolutionX = 0;
         this.resolutionY=0;
     }
-    public TV(String[] args)
+
+    public Tv(String[] args)
     {
         super(args[0], Double.parseDouble(args[1]));
         this.fps=0;
@@ -77,8 +78,10 @@ public class TV extends Electric_appliance {
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("#.##");
-        return "TV{" +
-                "numberChannels=" + numberChannels +
+        return "Tv{" +
+                "model=" +
+                ", capacity= " + df.format(getCapacity()) +
+                " W, numberChannels=" + numberChannels +
                 ", resolutionX=" + resolutionX +
                 ", resolutionY=" + resolutionY +
                 ", fps=" + fps +

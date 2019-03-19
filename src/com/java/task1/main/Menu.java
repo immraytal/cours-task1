@@ -1,7 +1,10 @@
-package Task1.Main;
-import Task1.Electric_appliance;
-import Task1.Equipments.Fridge;
-import Task1.Equipments.TV;
+package com.java.task1.main;
+
+import com.java.task1.Electric_appliance;
+import com.java.task1.equipments.Fridge;
+import com.java.task1.equipments.Pc;
+import com.java.task1.equipments.Tv;
+import com.java.task1.equipments.Teapot;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,10 +13,10 @@ import java.util.UUID;
 
 public class Menu {
 
-  private ArrayList<Electric_appliance> fridges = randomSet();
-  private ArrayList<Electric_appliance> psc = randomSet();
-  private ArrayList<Electric_appliance> teapots = randomSet();
-  private ArrayList<Electric_appliance> tvs = randomSet();
+    private ArrayList<Electric_appliance> fridges = randomSet("Fridge");
+    private ArrayList<Electric_appliance> psc = randomSet("Pc");
+    private ArrayList<Electric_appliance> teapots = randomSet("Teapot");
+    private ArrayList<Electric_appliance> tvs = randomSet("Tv");
 
     public int menu()
     {
@@ -25,7 +28,7 @@ public class Menu {
 
         while(true)
         {
-            System.out.printf("Menu:\n" +
+            System.out.println("Menu:\n" +
                     "1. Add new appliance\n" +
                     "2. Remove appliance\n" +
                     "3. Show all appliance\n" +
@@ -44,7 +47,7 @@ public class Menu {
                     checkString = in.nextLine();
                     switch (checkString)
                     {
-                        case "TV":
+                        case "Tv":
                             System.out.println("Enter parameters");
                             in.nextLine();
                             String model = in.nextLine();
@@ -53,9 +56,9 @@ public class Menu {
                             int resX =  Integer.parseInt(in.nextLine());
                             int resY = Integer.parseInt(in.nextLine());
                             int channels =  Integer.parseInt(in.nextLine());
-                            tvs.add(new TV(model,capacity,channels, resX, resY, fps));
+                            tvs.add(new Tv(model, capacity, channels, resX, resY, fps));
                             break;
-                        case "PC":
+                        case "Pc":
                             break;
                         case "Teapot":
                             break;
@@ -76,10 +79,10 @@ public class Menu {
                     int whichOne = Integer.parseInt(in.nextLine());
                     switch (newCheck1)
                     {
-                        case "TV":
+                        case "Tv":
                             tvs.remove(whichOne);
                             break;
-                        case "PC":
+                        case "Pc":
                             psc.remove(whichOne);
                             break;
                         case "Teapot":
@@ -89,30 +92,29 @@ public class Menu {
                             fridges.remove(whichOne);
                             break;
                         default:
-                            System.out.println("Enter one of {TV, PC, Teapot, Fridge}");
+                            System.out.println("Enter one of {Tv, Pc, Teapot, Fridge}");
                     }
                     break;
                 case 3://Show appliance
-                    System.out.println("Fridges:");
+                    System.out.println("\nFridges:\n");
                     for(Electric_appliance  a: fridges)
                     {
                         System.out.println(a.toString());
-
                     }
-                    System.out.println("PCs:");
-                    for(Electric_appliance  a: psc)
+                    System.out.println("\nPCs:\n");
+                    for (Electric_appliance b : psc)
                     {
-                        System.out.println("model: "+a.getModel() + "  capacity: " + a.getCapacity() + " W isOn=" + a.getOn());
+                        System.out.println(b.toString());
                     }
-                    System.out.println("Teapots:");
-                    for(Electric_appliance  a: teapots)
+                    System.out.println("\nTeapots:\n");
+                    for (Electric_appliance c : teapots)
                     {
-                        System.out.println("model: "+a.getModel() + "  capacity: " + a.getCapacity() +  " W isOn=" + a.getOn());
+                        System.out.println(c.toString());
                     }
-                    System.out.println("TVs:");
-                    for(Electric_appliance  a: tvs)
+                    System.out.println("\nTVs:\n");
+                    for (Electric_appliance d : tvs)
                     {
-                        System.out.println("model: "+a.getModel() + "  capacity: " + a.getCapacity() + " W isOn=" + a.getOn());
+                        System.out.println(d.toString());
                     }
                     break;
                 case 4://Sort by capacity
@@ -133,12 +135,12 @@ public class Menu {
                     String newCheck2 = in.nextLine();
                     switch (newCheck2)
                     {
-                        case "TV":
+                        case "Tv":
                             int which1 = Integer.parseInt(in.nextLine());
                             tvs.get(which1).setOn(true);
 
                             break;
-                        case "PC":
+                        case "Pc":
                             int which2 = Integer.parseInt(in.nextLine());
                             psc.get(which2).setOn(true);
 
@@ -169,7 +171,8 @@ public class Menu {
 
 
     }
-    private static ArrayList<Electric_appliance> randomSet()
+
+    private static ArrayList<Electric_appliance> randomSet(String choose)
     {
         Random random = new Random();
         ArrayList<Electric_appliance> someList = new ArrayList<>();
@@ -177,10 +180,30 @@ public class Menu {
         while(size<1) {
             size = random.nextInt(5);
         }
-
-        for(int i=0;i<size;i++)
-        {
-            someList.add(i,new Fridge( UUID.randomUUID().toString().substring(0,5), (100+random.nextInt(900))*1.0+random.nextDouble()));
+        switch (choose) {
+            case "Fridge":
+                for (int i = 0; i < size; i++) {
+                    someList.add(i, new Fridge(UUID.randomUUID().toString().substring(0, 5), (100 + random.nextInt(900)) * 1.0 + random.nextDouble()));
+                }
+                break;
+            case "Pc":
+                for (int i = 0; i < size; i++) {
+                    someList.add(i, new Pc(UUID.randomUUID().toString().substring(0, 5), (100 + random.nextInt(900)) * 1.0 + random.nextDouble()));
+                }
+                break;
+            case "Tv":
+                for (int i = 0; i < size; i++) {
+                    someList.add(i, new Tv(UUID.randomUUID().toString().substring(0, 5), (100 + random.nextInt(900)) * 1.0 + random.nextDouble()));
+                }
+                break;
+            case "Teapot":
+                for (int i = 0; i < size; i++) {
+                    someList.add(i, new Teapot(UUID.randomUUID().toString().substring(0, 5), (100 + random.nextInt(900)) * 1.0 + random.nextDouble()));
+                }
+                break;
+            default:
+                System.out.println("Encorrect input");
+                break;
         }
         return someList;
     }
@@ -191,11 +214,11 @@ public class Menu {
         Electric_appliance someApp;
         while(true) {
             switch (in.nextLine()) {
-                case "TV":
+                case "Tv":
                     System.out.println("Choose ID[0.." + (tvs.size()-1) + "] ");
                     someApp = tvs.get(Integer.parseInt(in.nextLine()));
                     return someApp;
-                case "PC":
+                case "Pc":
                     System.out.println("Choose ID[0.." + (psc.size()-1) + "] ");
                     someApp = psc.get(Integer.parseInt(in.nextLine()));
                     return someApp;
